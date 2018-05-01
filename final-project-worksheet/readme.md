@@ -17,7 +17,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+The Color Picker will load a well-formatted interface displaying an array of colors to interact with. When a color is selected, the following information is shown in a modal: the breakdown of the color conversions (CMYK, RGB, HEX) where the values will be displayed in a chart representing the amounts of the primary colors (example), description of the color family, color history and cultural meanings, use in company branding, and where this color is used in famous works of art or photographs. This project would mostly focus around The Color API. The selected color can be added to a swatch book for future reference, and then can be shared with a url with co-workers. 
 
 ## Wireframes
 
