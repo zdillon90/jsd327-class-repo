@@ -8,7 +8,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|May 1st| Project Description | Incomplete
+|May 1st| Project Description | Complete
 |May 8th| Wireframes / Priority Matrix / Functional Components | Incomplete
 |May 15th| External API(s) Decision / Core Application Structure (HTML, CSS, etc.) | Incomplete
 |May 22nd| Minimal Viable Product | Incomplete
