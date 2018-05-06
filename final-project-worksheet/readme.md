@@ -35,10 +35,16 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 #### MVP 
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
-- Save their choices in firebase
+1. Load colors onto the home page 
+2. Select a color from the grid 
+3. Bring up a model for the color chosen
+4. Show the color name in the modal 
+5. Show conversions of that color in different color codes 
+6. Show a color meaning for the color family chosen
+7. Save that color to a swatch 
+8. Close the color modal
+9. Add multiple colors onto a swatch
+
 
 #### PostMVP 
 
