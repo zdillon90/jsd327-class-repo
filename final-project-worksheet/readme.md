@@ -26,7 +26,8 @@ https://res.cloudinary.com/diwthhgdp/image/upload/v1525627456/IMG_2185.jpg
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
+Include a full list of features that have been prioritized based on the `Time and Importance` Matix.
+https://res.cloudinary.com/diwthhgdp/image/upload/v1525632791/JSD_Color_Picker_Final.jpg
 
 ### MVP/PostMVP - 5min
 
