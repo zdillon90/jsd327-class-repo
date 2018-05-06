@@ -22,6 +22,7 @@ The Color Picker will load a well-formatted interface displaying an array of col
 ## Wireframes
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
+https://res.cloudinary.com/diwthhgdp/image/upload/v1525627456/IMG_2185.jpg
 
 ## Priority Matrix
 
