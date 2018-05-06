@@ -48,7 +48,9 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 #### PostMVP 
 
-- Add user auth
+10. Share that swatch URL
+11. Signup and Login 
+12. Save swatch to account
 
 ## Functional Components
 
