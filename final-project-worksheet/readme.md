@@ -60,8 +60,18 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
+| 1 | H | 30min|  |  |
+| 2 | H | 20min|  |  |
+| 3 | H | 1hr |  |  |
+| 4 | H | 20min|  |  |
+| 5 | M | 40min |  |  |
+| 6 | L | 1hr |  |  |
+| 7 | H | 2hrs |  |  |
+| 8 | H | 15min |  |  | 
+| 9 | H | 3hrs |  |  |
+| 10 | M | 2.5hrs |  |  |
+| 11 | L | 4+hrs |  |  |
+| 12 | L | 4+hrs |  |  |
 | Total | H | 6hrs| 5hrs | 5hrs |
 
 ## Helper Functions
