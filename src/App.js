@@ -6,19 +6,23 @@ class App extends Component {
     super(props)
   }
 
-  componentDidMount() {
-    fetch('http://www.thecolorapi.com/id?rgb=rgb(30,71,171)')
+  ranColor() {
+    const redVal = Math.floor(Math.random() * 255);
+    const greenVal = Math.floor(Math.random() * 255);
+    const blueVal = Math.floor(Math.random() * 255);
+    fetch(`http://www.thecolorapi.com/id?rgb=rgb(${redVal},${greenVal},${blueVal})`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      return data
     })
   }
 
   render() {
+    let randomColor = this.ranColor()
     return (
       <div>
         <h1 className="App_title">Hello World - Color Picker</h1>
-        <ColorBlock />
+        <ColorBlock color={randomColor} />
       </div>
     );
   }
