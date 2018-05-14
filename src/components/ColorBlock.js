@@ -5,22 +5,31 @@ class ColorBlock extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      color: 'blue'
+      color: null,
+      rgbValue: null,
     }
   }
 
   componentDidMount() {
-    console.log('mounted');
-    // Call a function in the main app to get the color
-    // from the API and then pass the color down to the Block
-    //
-    // Use the a random number to create a unique rgb value
+    console.log('running');
+    const redVal = Math.floor(Math.random() * 255);
+    const greenVal = Math.floor(Math.random() * 255);
+    const blueVal = Math.floor(Math.random() * 255);
+    fetch(`http://www.thecolorapi.com/id?rgb=rgb(${redVal},${greenVal},${blueVal})`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data)
+      this.setState({
+        color: data,
+        rgbValue: `rgb(${redVal},${greenVal},${blueVal})`
+      })
+    })
   }
 
 
   render() {
     const blockStyle = {
-      fill: this.state.color,
+      fill: this.state.rgbValue,
       stroke: 'gray',
       strokeWidth:5
     };
