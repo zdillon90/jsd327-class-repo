@@ -11,6 +11,7 @@ class ColorBlock extends Component {
   }
 
   componentDidMount() {
+    // TODO: Move this up to the App component
     console.log('running');
     const redVal = Math.floor(Math.random() * 255);
     const greenVal = Math.floor(Math.random() * 255);
