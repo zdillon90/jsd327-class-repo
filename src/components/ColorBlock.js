@@ -35,8 +35,9 @@ class ColorBlock extends Component {
       strokeWidth:5
     };
     return(
-      <svg width="100" height="100">
-        <rect width="100" height="100" style={blockStyle} />
+      <svg width="125" height="125">
+        <rect x="20" y="20" rx="20" ry="20"
+          width="100" height="100" style={blockStyle} />
       </svg>
     )
   }

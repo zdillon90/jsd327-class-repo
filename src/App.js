@@ -11,7 +11,7 @@ class App extends Component {
 
   componentDidMount() {
     const ids = []
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 78; i++) {
       const id = Math.random().toString(36).substr(2, 5)
       ids.push(id)
     }
