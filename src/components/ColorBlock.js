@@ -19,7 +19,6 @@ class ColorBlock extends Component {
     fetch(`http://www.thecolorapi.com/id?rgb=rgb(${redVal},${greenVal},${blueVal})`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data)
       this.setState({
         color: data,
         rgbValue: `rgb(${redVal},${greenVal},${blueVal})`
@@ -34,10 +33,17 @@ class ColorBlock extends Component {
       stroke: 'gray',
       strokeWidth:5
     };
+    const colorData = this.state.color
+    const colorText = colorData ? (
+      <text x="30" y="15" fontFamily="Verdana" fontSize="12" fill="gray">{colorData.name.value}</text>
+    ) : (
+      <div></div>
+    )
     return(
       <svg width="125" height="125">
         <rect x="20" y="20" rx="20" ry="20"
           width="100" height="100" style={blockStyle} />
+        {colorText}
       </svg>
     )
   }
