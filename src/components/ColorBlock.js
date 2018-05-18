@@ -7,12 +7,12 @@ class ColorBlock extends Component {
     this.state = {
       color: null,
       rgbValue: null,
+      visible: false,
     }
   }
 
   componentDidMount() {
     // TODO: Move this up to the App component
-    console.log('running');
     const redVal = Math.floor(Math.random() * 255);
     const greenVal = Math.floor(Math.random() * 255);
     const blueVal = Math.floor(Math.random() * 255);
@@ -26,6 +26,16 @@ class ColorBlock extends Component {
     })
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    console.log(this.state.color);
+    this.setState({
+      visible: true,
+    })
+  }
+
+  // TODO: Need to Pass this state down to the modal child
+
 
   render() {
     const blockStyle = {
@@ -35,16 +45,20 @@ class ColorBlock extends Component {
     };
     const colorData = this.state.color
     const colorText = colorData ? (
-      <text x="30" y="15" fontFamily="Verdana" fontSize="12" fill="gray">{colorData.name.value}</text>
+      <text x="30" y="15" fontFamily="Verdana" fontSize="12" fill="gray">
+        {colorData.name.value}
+      </text>
     ) : (
       <div></div>
     )
     return(
-      <svg width="125" height="125">
-        <rect x="20" y="20" rx="20" ry="20"
-          width="100" height="100" style={blockStyle} />
-        {colorText}
-      </svg>
+        <svg width="125" height="125">
+          <rect x="20" y="20" rx="20" ry="20"
+            width="100" height="100" style={blockStyle}
+            onClick={(e) => this.handleClick(e)}
+          />
+          {colorText}
+        </svg>
     )
   }
 }

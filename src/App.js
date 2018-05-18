@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ColorBlock from './components/ColorBlock'
+import 'antd/dist/antd.css'
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +16,6 @@ class App extends Component {
       const id = Math.random().toString(36).substr(2, 5)
       ids.push(id)
     }
-    console.log(ids);
     this.setState({ ids: ids })
   }
 
