@@ -41,7 +41,7 @@ class ColorModal extends Component {
         onOk={this.handleOk}
         onCancel={this.handleCancel}
       >
-        <RGBChart />
+        <RGBChart rgb={color.rgb}/>
         <p>Some contents...</p>
         <p>Some contents...</p>
       </Modal>
