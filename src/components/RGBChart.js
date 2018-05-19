@@ -2,19 +2,6 @@ import React, { Component } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Cell } from 'recharts';
 
 class RGBChart extends Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      rgb: null
-    }
-  }
-
-  componentWillReceiveProps(valueData){
-    this.setState({
-      rgb: valueData
-    })
-  }
-
 	render () {
     const colors = ['#FF0000', '#00FF00', '#0000FF']
     const rgbData = [
