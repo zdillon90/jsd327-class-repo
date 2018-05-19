@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Button } from 'antd';
+import RGBChart from './RGBChart';
 
 class ColorModal extends Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class ColorModal extends Component {
         onOk={this.handleOk}
         onCancel={this.handleCancel}
       >
-        <p>Some contents...</p>
+        <RGBChart />
         <p>Some contents...</p>
         <p>Some contents...</p>
       </Modal>
