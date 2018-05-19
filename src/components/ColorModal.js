@@ -6,37 +6,53 @@ class ColorModal extends Component {
     super(props)
     this.state = {
       visible: false,
+      color: null,
     }
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      visible: newProps.visible,
+      color: newProps.color
+    })
+  }
+
   handleOk = (e) => {
-    console.log(e);
     this.setState({
       visible: false,
     });
   }
 
   handleCancel = (e) => {
-    console.log(e);
     this.setState({
       visible: false,
     });
   }
 
+
+
   render() {
+    const color = this.state.color
+    const modalElement = color ? (
+      <Modal
+        title={this.state.color.name.value}
+        visible={this.state.visible}
+        onOk={this.handleOk}
+        onCancel={this.handleCancel}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
+    ) : (
+      <div></div>
+    )
     return (
       <div>
-        <Modal
-          title="Basic Modal"
-          visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-        >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-        </Modal>
+        {modalElement}
       </div>
     )
   }
 }
+
+export default ColorModal;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import '../App.css';
+import ColorModal from './ColorModal';
 
 class ColorBlock extends Component {
   constructor(props) {
@@ -58,6 +58,7 @@ class ColorBlock extends Component {
             onClick={(e) => this.handleClick(e)}
           />
           {colorText}
+        <ColorModal visible={this.state.visible}  color={this.state.color}/>
         </svg>
     )
   }
