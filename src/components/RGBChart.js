@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell } from 'recharts';
 
 class RGBChart extends Component{
 	render () {
@@ -10,7 +10,7 @@ class RGBChart extends Component{
       {color: 'Blue', value: this.props.rgb.b}
     ]
   	return (
-    	<BarChart layout="vertical" width={600} height={300} data={rgbData}
+    	<BarChart layout="vertical" width={600} height={150} data={rgbData}
         margin={{top: 5, right: 30, left: 20, bottom: 5}}>
         <CartesianGrid strokeDasharray="3 3"/>
         <XAxis type="number"/>
@@ -19,7 +19,7 @@ class RGBChart extends Component{
         <Bar dataKey="value">
           {
             rgbData.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={colors[index]}  strokeWidth={index === 2 ? 4 : 1}/>
+              <Cell key={`cell-${index}`} fill={colors[index]}/>
             ))
           }
         </Bar>
