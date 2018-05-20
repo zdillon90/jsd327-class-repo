@@ -37,15 +37,18 @@ class ColorModal extends Component {
     const color = this.state.color
     const modalElement = color ? (
       <Modal
-        title={this.state.color.name.value}
+        title={`${this.state.color.name.value} - ${this.state.color.hex.value}`}
         visible={this.state.visible}
         onOk={this.handleOk}
         onCancel={this.handleCancel}
         width={700}
       >
-        <RGBChart rgb={color.rgb}/>
-        <CMYKChart cmyk={color.cmyk}/>
-        <p>Some contents...</p>
+        <img src={this.state.color.image.bare} />
+         <div style={{ marginTop: 20 }}>
+           <RGBChart rgb={color.rgb}/>
+           <CMYKChart cmyk={color.cmyk}/>
+           <p>Some contents...</p>
+         </div>
       </Modal>
     ) : (
       <div></div>
