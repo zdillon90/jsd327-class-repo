@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Modal } from 'antd';
 import RGBChart from './RGBChart';
+import CMYKChart from './CMYKChart';
 
 class ColorModal extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class ColorModal extends Component {
         width={700}
       >
         <RGBChart rgb={color.rgb}/>
-        <p>Some contents...</p>
+        <CMYKChart cmyk={color.cmyk}/>
         <p>Some contents...</p>
       </Modal>
     ) : (
