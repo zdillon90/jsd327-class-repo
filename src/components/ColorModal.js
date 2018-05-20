@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Modal } from 'antd';
+import { Modal, Row, Col } from 'antd';
 import RGBChart from './RGBChart';
 import CMYKChart from './CMYKChart';
+import ColorText from './ColorText'
 
 class ColorModal extends Component {
   constructor(props) {
@@ -43,12 +44,19 @@ class ColorModal extends Component {
         onCancel={this.handleCancel}
         width={700}
       >
-        <img src={this.state.color.image.bare} />
-         <div style={{ marginTop: 20 }}>
-           <RGBChart rgb={color.rgb}/>
-           <CMYKChart cmyk={color.cmyk}/>
-           <p>Some contents...</p>
-         </div>
+        <Row>
+          <Col span={4}>
+            <img src={this.state.color.image.bare} />
+          </Col>
+          <Col span={18}>
+            <ColorText />
+          </Col>
+        </Row>
+        <div style={{ marginTop: 20 }}>
+          <RGBChart rgb={color.rgb}/>
+          <CMYKChart cmyk={color.cmyk}/>
+          <p>Some contents...</p>
+        </div>
       </Modal>
     ) : (
       <div></div>

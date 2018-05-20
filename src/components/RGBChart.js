@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell } from 'recharts';
 
 class RGBChart extends Component{
-	render () {
+	render() {
     const colors = ['#FF0000', '#00FF00', '#0000FF']
     const rgbData = [
       {color: 'Red', value: this.props.rgb.r},
