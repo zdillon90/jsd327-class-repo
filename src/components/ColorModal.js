@@ -46,10 +46,10 @@ class ColorModal extends Component {
       >
         <Row>
           <Col span={4}>
-            <img src={this.state.color.image.bare} />
+            <img src={this.state.color.image.bare} alt="Color Selected" />
           </Col>
           <Col span={18}>
-            <ColorText />
+            <ColorText color={this.state.color}/>
           </Col>
         </Row>
         <div style={{ marginTop: 20 }}>
