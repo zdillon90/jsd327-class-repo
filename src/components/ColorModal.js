@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Modal, Row, Col } from 'antd';
 import RGBChart from './RGBChart';
 import CMYKChart from './CMYKChart';
-import ColorText from './ColorText'
+import ColorText from './ColorText';
+import SwatchButtons from './SwatchButtons';
 
 class ColorModal extends Component {
   constructor(props) {
@@ -55,7 +56,7 @@ class ColorModal extends Component {
         <div style={{ marginTop: 20 }}>
           <RGBChart rgb={color.rgb}/>
           <CMYKChart cmyk={color.cmyk}/>
-          <p>Some contents...</p>
+          <SwatchButtons />
         </div>
       </Modal>
     ) : (
