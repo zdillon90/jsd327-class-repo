@@ -4,6 +4,7 @@ import RGBChart from './RGBChart';
 import CMYKChart from './CMYKChart';
 import ColorText from './ColorText';
 import SwatchButtons from './SwatchButtons';
+import Swatch from './Swatch';
 
 class ColorModal extends Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class ColorModal extends Component {
           <RGBChart rgb={color.rgb}/>
           <CMYKChart cmyk={color.cmyk}/>
           <SwatchButtons />
+          <Swatch />
         </div>
       </Modal>
     ) : (
