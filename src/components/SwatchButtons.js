@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Button, Icon } from 'antd';
 import Swatch from './Swatch';
 
@@ -12,7 +12,7 @@ class SwatchButtons extends Component {
 
   render() {
     return(
-      <React.Fragment>
+      <Fragment>
         <Button.Group size='small'>
           <Button>
             <Icon type="up" />Remove
@@ -22,7 +22,7 @@ class SwatchButtons extends Component {
           </Button>
         </Button.Group>
         <Swatch colorHex={this.state.colors} />
-      </React.Fragment>
+      </Fragment>
     )
   }
 }

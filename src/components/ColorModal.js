@@ -56,7 +56,7 @@ class ColorModal extends Component {
         <div style={{ marginTop: 20 }}>
           <RGBChart rgb={color.rgb}/>
           <CMYKChart cmyk={color.cmyk}/>
-          <SwatchButtons colorHex={color.hex.value}/>
+          <SwatchButtons colorList={this.props.colorList} colorHex={color.hex.value}/>
         </div>
       </Modal>
     ) : (

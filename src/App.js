@@ -6,7 +6,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      ids: null
+      ids: null,
+      colorList: ["#2db7f5"],
       // Move the color list to the App layer and then pass it down to the
       // The modal list buttons
     }
@@ -21,12 +22,17 @@ class App extends Component {
     this.setState({ ids: ids })
   }
 
+  handleAdd = (e) => {
+    this.setState({
+      
+    })
+  }
 
   render() {
     const blockIds = this.state.ids
     const blocks = blockIds ? (
       blockIds.map((d) => {
-        return <ColorBlock key={d} />
+        return <ColorBlock colorList={this.state.colorList} key={d} />
       })
     ) : (
       <h3>Loading...</h3>

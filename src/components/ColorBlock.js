@@ -58,7 +58,11 @@ class ColorBlock extends Component {
             onClick={(e) => this.handleClick(e)}
           />
           {colorText}
-        <ColorModal visible={this.state.visible}  color={this.state.color}/>
+        <ColorModal
+          colorList={this.props.colorList}
+          visible={this.state.visible}
+          color={this.state.color}
+        />
         </svg>
     )
   }
