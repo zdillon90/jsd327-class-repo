@@ -16,7 +16,7 @@ class ColorBlock extends Component {
     const redVal = Math.floor(Math.random() * 255);
     const greenVal = Math.floor(Math.random() * 255);
     const blueVal = Math.floor(Math.random() * 255);
-    fetch(`http://www.thecolorapi.com/id?rgb=rgb(${redVal},${greenVal},${blueVal})`)
+    fetch(`https://www.thecolorapi.com/id?rgb=rgb(${redVal},${greenVal},${blueVal})`)
     .then((res) => res.json())
     .then((data) => {
       this.setState({

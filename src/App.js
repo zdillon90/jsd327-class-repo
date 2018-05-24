@@ -7,6 +7,8 @@ class App extends Component {
     super(props)
     this.state = {
       ids: null
+      // Move the color list to the App layer and then pass it down to the
+      // The modal list buttons
     }
   }
 

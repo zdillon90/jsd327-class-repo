@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Icon } from 'antd';
+import Swatch from './Swatch';
 
 class SwatchButtons extends Component {
   constructor(props) {
@@ -11,14 +12,17 @@ class SwatchButtons extends Component {
 
   render() {
     return(
-      <Button.Group size='small'>
-        <Button>
-          <Icon type="up" />Remove
-        </Button>
-        <Button>
-          Add<Icon type="down" />
-        </Button>
-      </Button.Group>
+      <React.Fragment>
+        <Button.Group size='small'>
+          <Button>
+            <Icon type="up" />Remove
+          </Button>
+          <Button>
+            Add<Icon type="down" />
+          </Button>
+        </Button.Group>
+        <Swatch colorHex={this.state.colors} />
+      </React.Fragment>
     )
   }
 }
