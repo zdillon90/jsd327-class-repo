@@ -59,7 +59,6 @@ class ColorBlock extends Component {
           />
           {colorText}
         <ColorModal
-          colorList={this.props.colorList}
           visible={this.state.visible}
           color={this.state.color}
         />

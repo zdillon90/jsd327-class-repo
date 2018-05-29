@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { dataContext, data } from './DataContext'
 import ColorBlock from './components/ColorBlock'
 import 'antd/dist/antd.css'
 
@@ -6,10 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      ids: null,
-      colorList: ["#2db7f5"],
-      // Move the color list to the App layer and then pass it down to the
-      // The modal list buttons
+      ids: null
     }
   }
 
@@ -32,16 +30,18 @@ class App extends Component {
     const blockIds = this.state.ids
     const blocks = blockIds ? (
       blockIds.map((d) => {
-        return <ColorBlock colorList={this.state.colorList} key={d} />
+        return <ColorBlock key={d} />
       })
     ) : (
       <h3>Loading...</h3>
     )
     return (
-      <div>
-        <h1 className="App_title">Hello World - Color Picker</h1>
-        {blocks}
-      </div>
+      <dataContext.Provider value={data}>
+        <div>
+          <h1 className="App_title">Hello World - Color Picker</h1>
+          {blocks}
+        </div>
+      </dataContext.Provider>
     );
   }
 }
