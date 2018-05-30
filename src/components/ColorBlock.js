@@ -9,6 +9,8 @@ class ColorBlock extends Component {
       rgbValue: null,
       visible: false,
     }
+    this.handleOk = this.handleOk.bind(this)
+    this.handleCancel = this.handleCancel.bind(this)
   }
 
   componentDidMount() {
@@ -24,6 +26,19 @@ class ColorBlock extends Component {
         rgbValue: `rgb(${redVal},${greenVal},${blueVal})`
       })
     })
+  }
+
+  handleOk = (e) => {
+    // console.log('inside ColorBlock handle Ok')
+    this.setState({
+      visible: false,
+    });
+  }
+
+  handleCancel = (e) => {
+    this.setState({
+      visible: false,
+    });
   }
 
   handleClick(e) {
@@ -57,6 +72,8 @@ class ColorBlock extends Component {
           {colorText}
         <ColorModal
           visible={this.state.visible}
+          handleOk={this.handleOk}
+          handleCancel={this.handleCancel}
           color={this.state.color}
         />
         </svg>

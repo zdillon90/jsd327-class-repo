@@ -6,51 +6,31 @@ import ColorText from './ColorText';
 import SwatchButtons from './SwatchButtons';
 
 class ColorModal extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      visible: false,
-      color: null,
-    }
-  }
-
-  componentWillReceiveProps(newProps) {
-    this.setState({
-      visible: newProps.visible,
-      color: newProps.color
-    })
-  }
-
   handleOk = (e) => {
-    this.setState({
-      visible: false,
-    });
+    console.log('inside ColorModeal handle click')
+    this.props.handleOk()
   }
 
   handleCancel = (e) => {
-    this.setState({
-      visible: false,
-    });
+    this.props.handleCancel()
   }
 
-
-
   render() {
-    const color = this.state.color
+    const color = this.props.color
     const modalElement = color ? (
       <Modal
-        title={`${this.state.color.name.value} - ${this.state.color.hex.value}`}
-        visible={this.state.visible}
+        title={`${this.props.color.name.value} - ${this.props.color.hex.value}`}
+        visible={this.props.visible}
         onOk={this.handleOk}
         onCancel={this.handleCancel}
         width={700}
       >
         <Row>
           <Col span={4}>
-            <img src={this.state.color.image.bare} alt="Color Selected" />
+            <img src={this.props.color.image.bare} alt="Color Selected" />
           </Col>
           <Col span={18}>
-            <ColorText color={this.state.color}/>
+            <ColorText color={this.props.color}/>
           </Col>
         </Row>
         <div style={{ marginTop: 20 }}>
