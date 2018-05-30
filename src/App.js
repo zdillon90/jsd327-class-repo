@@ -8,17 +8,33 @@ class App extends Component {
     super(props)
 
     this.handleAdd = (e) => {
-      // console.log(`Add has been clicked, color: ${e.target.id}`)
       let colorId = e.target.id
       this.setState(state => ({
         colorList: this.state.colorList.concat([`${colorId}`])
       }));
     }
 
+    this.handleRemove = (colorId) => {
+      console.log('handle Remove')
+      console.log(colorId)
+      let currentColorList = this.state.colorList
+      console.log(currentColorList)
+      let colorIdIndex = currentColorList.indexOf(colorId)
+      console.log(currentColorList)
+      if (colorIdIndex > - 1) {
+        currentColorList.splice(colorIdIndex, 1);
+      }
+      console.log(currentColorList)
+      this.setState(state => ({
+        colorList: currentColorList
+      }));
+    }
+
     this.state = {
       ids: null,
       colorList: [],
-      handleAdd: this.handleAdd
+      handleAdd: this.handleAdd,
+      handleRemove: this.handleRemove,
     }
   }
 

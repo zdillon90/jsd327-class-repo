@@ -14,17 +14,12 @@ class SwatchButtons extends Component {
   render() {
     return(
       <dataContext.Consumer>
-        {({ids, colorList, handleAdd}) => (
+        {({ids, colorList, handleAdd, handleRemove}) => (
       <Fragment>
-        <Button.Group size='small'>
-          <Button>
-            <Icon type="up" />Remove
-          </Button>
-              <Button onClick={handleAdd} id={this.props.colorHex}>
-            Add<Icon type="down" />
-          </Button>
-        </Button.Group>
-        <Swatch colorList={colorList} colorHex={this.state.colors} />
+        <Button onClick={handleAdd} id={this.props.colorHex}>
+          Add<Icon type="down" />
+        </Button>
+        <Swatch colorList={colorList} colorHex={this.props.colorHex} handleRemove={handleRemove} />
       </Fragment>
         )}
       </dataContext.Consumer>

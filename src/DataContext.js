@@ -7,5 +7,6 @@ export const data = {
 export const dataContext = React.createContext({
     colorListData: data.default,
     handleAdd: () => {},
+    handleRemove: () => {},
 })
 
