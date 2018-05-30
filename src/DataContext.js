@@ -1,11 +1,11 @@
 import React from 'react'
 
 export const data = {
-    default: ["#000000"],
-    colorList: ["#FF355E"]
+    default: ["#000000"]
 }
 
-export const dataContext = React.createContext(
-    data.default
-)
+export const dataContext = React.createContext({
+    colorListData: data.default,
+    handleAdd: () => {},
+})
 

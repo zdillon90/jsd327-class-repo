@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
-import { dataContext, data } from './DataContext'
+import { dataContext } from './DataContext'
 import ColorBlock from './components/ColorBlock'
 import 'antd/dist/antd.css'
 
 class App extends Component {
   constructor(props) {
     super(props)
+
+    this.handleAdd = (e) => {
+      // console.log(`Add has been clicked, color: ${e.target.id}`)
+      let colorId = e.target.id
+      this.setState(state => ({
+        colorList: this.state.colorList.concat([`${colorId}`])
+      }));
+    }
+
     this.state = {
-      ids: null
+      ids: null,
+      colorList: [],
+      handleAdd: this.handleAdd
     }
   }
 
@@ -20,12 +31,6 @@ class App extends Component {
     this.setState({ ids: ids })
   }
 
-  handleAdd = (e) => {
-    this.setState({
-      
-    })
-  }
-
   render() {
     const blockIds = this.state.ids
     const blocks = blockIds ? (
@@ -36,7 +41,7 @@ class App extends Component {
       <h3>Loading...</h3>
     )
     return (
-      <dataContext.Provider value={data}>
+      <dataContext.Provider value={this.state}>
         <div>
           <h1 className="App_title">Hello World - Color Picker</h1>
           {blocks}

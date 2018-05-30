@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Button, Icon } from 'antd';
 import Swatch from './Swatch';
+import { dataContext } from '../DataContext';
 
 class SwatchButtons extends Component {
   constructor(props) {
@@ -12,17 +13,21 @@ class SwatchButtons extends Component {
 
   render() {
     return(
+      <dataContext.Consumer>
+        {({ids, colorList, handleAdd}) => (
       <Fragment>
         <Button.Group size='small'>
           <Button>
             <Icon type="up" />Remove
           </Button>
-          <Button>
+              <Button onClick={handleAdd} id={this.props.colorHex}>
             Add<Icon type="down" />
           </Button>
         </Button.Group>
-        <Swatch colorHex={this.state.colors} />
+        <Swatch colorList={colorList} colorHex={this.state.colors} />
       </Fragment>
+        )}
+      </dataContext.Consumer>
     )
   }
 }

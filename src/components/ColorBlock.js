@@ -34,9 +34,6 @@ class ColorBlock extends Component {
     })
   }
 
-  // TODO: Need to Pass this state down to the modal child
-
-
   render() {
     const blockStyle = {
       fill: this.state.rgbValue,

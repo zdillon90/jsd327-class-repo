@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { Tag } from 'antd';
-import {dataContext} from '../DataContext'
 
 
 class Swatch extends Component {
   render() {
+    const colorList = this.props.colorList
     return(
       <div>
-        <dataContext.Consumer>
-          {(context)=> (
-            <Tag color={context.colorList[0]}>{context.colorList[0]}</Tag>
-          )}
-        </dataContext.Consumer>
+        {colorList.map((colorHex) => 
+          <Tag key={colorHex} color={colorHex}>
+            {colorHex}
+          </Tag>
+        )}
       </div>
     )
   }
