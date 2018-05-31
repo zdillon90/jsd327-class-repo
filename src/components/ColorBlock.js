@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import '../App.css';
+import ColorModal from './ColorModal';
 
 class ColorBlock extends Component {
   constructor(props) {
@@ -9,6 +9,8 @@ class ColorBlock extends Component {
       rgbValue: null,
       visible: false,
     }
+    this.handleOk = this.handleOk.bind(this)
+    this.handleCancel = this.handleCancel.bind(this)
   }
 
   componentDidMount() {
@@ -16,7 +18,7 @@ class ColorBlock extends Component {
     const redVal = Math.floor(Math.random() * 255);
     const greenVal = Math.floor(Math.random() * 255);
     const blueVal = Math.floor(Math.random() * 255);
-    fetch(`http://www.thecolorapi.com/id?rgb=rgb(${redVal},${greenVal},${blueVal})`)
+    fetch(`https://www.thecolorapi.com/id?rgb=rgb(${redVal},${greenVal},${blueVal})`)
     .then((res) => res.json())
     .then((data) => {
       this.setState({
@@ -26,6 +28,19 @@ class ColorBlock extends Component {
     })
   }
 
+  handleOk = (e) => {
+    // console.log('inside ColorBlock handle Ok')
+    this.setState({
+      visible: false,
+    });
+  }
+
+  handleCancel = (e) => {
+    this.setState({
+      visible: false,
+    });
+  }
+
   handleClick(e) {
     e.preventDefault();
     console.log(this.state.color);
@@ -33,9 +48,6 @@ class ColorBlock extends Component {
       visible: true,
     })
   }
-
-  // TODO: Need to Pass this state down to the modal child
-
 
   render() {
     const blockStyle = {
@@ -58,6 +70,12 @@ class ColorBlock extends Component {
             onClick={(e) => this.handleClick(e)}
           />
           {colorText}
+        <ColorModal
+          visible={this.state.visible}
+          handleOk={this.handleOk}
+          handleCancel={this.handleCancel}
+          color={this.state.color}
+        />
         </svg>
     )
   }

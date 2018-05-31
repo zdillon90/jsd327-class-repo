@@ -1,12 +1,40 @@
 import React, { Component } from 'react';
+import { dataContext } from './DataContext'
 import ColorBlock from './components/ColorBlock'
 import 'antd/dist/antd.css'
 
 class App extends Component {
   constructor(props) {
     super(props)
+
+    this.handleAdd = (e) => {
+      let colorId = e.target.id
+      this.setState(state => ({
+        colorList: this.state.colorList.concat([`${colorId}`])
+      }));
+    }
+
+    this.handleRemove = (colorId) => {
+      console.log('handle Remove')
+      console.log(colorId)
+      let currentColorList = this.state.colorList
+      console.log(currentColorList)
+      let colorIdIndex = currentColorList.indexOf(colorId)
+      console.log(currentColorList)
+      if (colorIdIndex > - 1) {
+        currentColorList.splice(colorIdIndex, 1);
+      }
+      console.log(currentColorList)
+      this.setState(state => ({
+        colorList: currentColorList
+      }));
+    }
+
     this.state = {
-      ids: null
+      ids: null,
+      colorList: [],
+      handleAdd: this.handleAdd,
+      handleRemove: this.handleRemove,
     }
   }
 
@@ -19,7 +47,6 @@ class App extends Component {
     this.setState({ ids: ids })
   }
 
-
   render() {
     const blockIds = this.state.ids
     const blocks = blockIds ? (
@@ -30,10 +57,12 @@ class App extends Component {
       <h3>Loading...</h3>
     )
     return (
-      <div>
-        <h1 className="App_title">Hello World - Color Picker</h1>
-        {blocks}
-      </div>
+      <dataContext.Provider value={this.state}>
+        <div>
+          <h1 className="App_title">Hello World - Color Picker</h1>
+          {blocks}
+        </div>
+      </dataContext.Provider>
     );
   }
 }
