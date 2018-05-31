@@ -1,8 +1,9 @@
 import 'antd/dist/antd.css'
 import React, { Component } from 'react';
-import { dataContext } from './DataContext'
-import ColorBlock from './components/ColorBlock'
-import { Layout, message } from 'antd';
+import { dataContext } from './DataContext';
+import ColorBlock from './components/ColorBlock';
+import Swatch from './components/Swatch';
+import { Layout, message, Row, Col } from 'antd';
 const { Content, Footer } = Layout;
 
 
@@ -43,7 +44,7 @@ class App extends Component {
 
   componentDidMount() {
     const ids = []
-    for (let i = 0; i < 72; i++) {
+    for (let i = 0; i < 84; i++) {
       const id = Math.random().toString(36).substr(2, 5)
       ids.push(id)
     }
@@ -61,8 +62,18 @@ class App extends Component {
     )
     return (
       <dataContext.Provider value={this.state}>
-        <Layout className="layout" style={{minHeight: '100vh'}}>
-          <h1 style={{ paddingLeft: 24, paddingTop: 12 }}>Color Picker</h1>
+        <Layout className="layout" style={{ minHeight: '100vh' }}>
+          <Row>
+            <Col span={4}>
+              <h1 style={{ paddingLeft: 50, paddingTop: 12 }}>Color Picker</h1>
+            </Col>
+            <Col span={6} style={{ paddingTop: 20 }}>
+              <Swatch 
+                handleRemove={this.state.handleRemove} 
+                colorList={this.state.colorList} 
+              />
+            </Col>
+          </Row>
           <Content style={{ padding: '0 50px' }}>
             <div style={{ background: '#fff', padding: 24 }}>
               {blocks}

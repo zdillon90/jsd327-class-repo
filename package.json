@@ -6,13 +6,15 @@
     "antd": "^3.5.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "recharts": "^1.0.0-beta.10"
+    "recharts": "^1.0.0-beta.10",
+    "serve": "^7.1.5"
   },
   "devDependencies": {
     "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
+    "now-start": "serve --single ./build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
