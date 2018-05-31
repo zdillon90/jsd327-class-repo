@@ -64,7 +64,7 @@ class ColorBlock extends Component {
       <div></div>
     )
     return(
-        <svg width="125" height="125">
+        <svg width="123" height="125">
           <rect x="20" y="20" rx="20" ry="20"
             width="100" height="100" style={blockStyle}
             onClick={(e) => this.handleClick(e)}

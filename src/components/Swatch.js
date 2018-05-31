@@ -15,7 +15,7 @@ class Swatch extends Component {
   
   handleCancel(e) {
     console.log(e);
-    message.error('Aborted');
+    message.error('Action Canceled');
   }
 
   render() {

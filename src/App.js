@@ -1,7 +1,10 @@
+import 'antd/dist/antd.css'
 import React, { Component } from 'react';
 import { dataContext } from './DataContext'
 import ColorBlock from './components/ColorBlock'
-import 'antd/dist/antd.css'
+import { Layout, message } from 'antd';
+const { Content, Footer } = Layout;
+
 
 class App extends Component {
   constructor(props) {
@@ -9,22 +12,22 @@ class App extends Component {
 
     this.handleAdd = (e) => {
       let colorId = e.target.id
-      this.setState(state => ({
-        colorList: this.state.colorList.concat([`${colorId}`])
-      }));
+      let colorIdIndex = this.state.colorList.indexOf(colorId)
+        if (colorIdIndex === -1) {
+        this.setState(state => ({
+          colorList: this.state.colorList.concat([`${colorId}`])
+        }));
+      } else {
+        message.error('Color already added');
+      }
     }
 
     this.handleRemove = (colorId) => {
-      console.log('handle Remove')
-      console.log(colorId)
       let currentColorList = this.state.colorList
-      console.log(currentColorList)
       let colorIdIndex = currentColorList.indexOf(colorId)
-      console.log(currentColorList)
       if (colorIdIndex > - 1) {
         currentColorList.splice(colorIdIndex, 1);
       }
-      console.log(currentColorList)
       this.setState(state => ({
         colorList: currentColorList
       }));
@@ -40,7 +43,7 @@ class App extends Component {
 
   componentDidMount() {
     const ids = []
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 72; i++) {
       const id = Math.random().toString(36).substr(2, 5)
       ids.push(id)
     }
@@ -58,10 +61,17 @@ class App extends Component {
     )
     return (
       <dataContext.Provider value={this.state}>
-        <div>
-          <h1 className="App_title">Hello World - Color Picker</h1>
-          {blocks}
-        </div>
+        <Layout className="layout" style={{minHeight: '100vh'}}>
+          <h1 style={{ paddingLeft: 24, paddingTop: 12 }}>Color Picker</h1>
+          <Content style={{ padding: '0 50px' }}>
+            <div style={{ background: '#fff', padding: 24 }}>
+              {blocks}
+            </div>
+          </Content>
+          <Footer style={{ textAlign: 'center' }}>
+            Zach Dillon / MIT
+          </Footer>
+        </Layout>
       </dataContext.Provider>
     );
   }
